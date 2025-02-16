@@ -30,3 +30,8 @@ printf "${Clear}%.0s" {1..5}
 _IsInstalled grub && [ -f "/boot/grub/grub.cfg" ] && {
     source ./grub.sh
 }
+
+# Install System Packages
+for Pkg in "${SYSTEM[@]}"; do
+    _InstallPackage "${Pkg}"
+done
