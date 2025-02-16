@@ -5,3 +5,14 @@ GrubConfigFile="/etc/default/grub"
 [[ ! -f "${GrubConfigFile}~" ]] && {
     sudo mv "${GrubConfigFile}" "${GrubConfigFile}~"
 }
+
+# Set new GRUB configuration
+sudo bash -c "echo '# GRUB boot loader configuration
+    GRUB_DEFAULT=0
+    GRUB_TIMEOUT_STYLE=hidden
+    GRUB_TIMEOUT=0
+    GRUB_DISTRIBUTOR=\`( . /etc/os-release; echo \${NAME} ) 2>/dev/null || echo Arch Linux\`
+    GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"
+    GRUB_CMDLINE_LINUX=\"\"
+    #GRUB_DISABLE_OS_PROBER=false
+    ' | sed 's/^[ \t]*//' > "${GrubConfigFile}
