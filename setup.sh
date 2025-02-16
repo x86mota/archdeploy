@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Global Variables
-export DownloadDir="/tmp/hypr-arch"
+export DownloadDir="/tmp/archdeploy"
 export Note='[\033[1;34mNOTE\033[0m]'
 export OK='[\033[1;32mOK\033[0m]'
 export Action='[\033[1;33mACTION\033[0m]'
@@ -38,4 +38,12 @@ source /etc/os-release
 [[ $UID -eq 0 ]] && {
     echo "${Error} - This script should not be executed as root! Exiting..."
     exit 1
+}
+
+# Downloading files
+GitRepo="https://github.com/x86mota/archdeploy.git"
+echo -e "${Note} - Downloading files..."
+[[ -d "${DownloadDir}" ]] && rm -rf "${DownloadDir}"
+git clone --quiet --depth=1 "${GitRepo}" "${DownloadDir}" && {
+  echo -e "${Clear}${OK} - Downloading files..."
 }
