@@ -16,3 +16,13 @@ sudo bash -c "echo '# GRUB boot loader configuration
     GRUB_CMDLINE_LINUX=\"\"
     #GRUB_DISABLE_OS_PROBER=false
     ' | sed 's/^[ \t]*//' > "${GrubConfigFile}
+
+# Additional configuration for Nvidia users 
+if [[ ${GraphicsCard} = "Nvidia" ]]; then
+    NvidiaModule="nvidia_drm.modeset=1"
+    ! grep -q "${NvidiaModule}" "${GrubConfigFile}" && {
+        sudo sed -i "s/\(GRUB_CMDLINE_LINUX_DEFAULT=\"[^\"]*\)/\1 ${NvidiaModule}/" "${GrubConfigFile}"
+    }
+fi
+
+_UpdateGrub
