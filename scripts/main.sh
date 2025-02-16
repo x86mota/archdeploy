@@ -19,3 +19,9 @@ fi
 GraphicsVendors=("Amd" "Intel" "Nvidia")
 _AskCustomOption "Which Graphics Card?" "${GraphicsVendors[*]}" GraphicsCard
 printf "${Clear}%.0s" {1..5}
+
+# If a graphics card vendor is selected, add to SYSTEM array
+[[ ${GraphicsCard} ]] && {
+    echo -e "${Note} - ${GraphicsCard} Selected"
+    eval "SYSTEM+=(\"\${$GraphicsCard[@]}\")"
+} || echo -e "${Note} - Skiping graphics card instalation"
