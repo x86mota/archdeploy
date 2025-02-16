@@ -51,3 +51,13 @@ _CloneRepo "${Dotfiles}" "${DownloadDir}/${TargetDir}" && {
 [[ ${GraphicsCard} = "Nvidia" ]] && {
     source ./nvidia.sh
 }
+
+# Loop through each script file in ScriptsDir and make them executable
+ScriptsDir="${HOME}/.local/bin"
+[[ -d "${ScriptsDir}"  ]] && {
+    for sh in "${ScriptsDir}"/*; do
+        if [ -f "${sh}" ]; then
+            chmod u+x "${sh}"
+        fi
+    done
+}
