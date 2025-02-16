@@ -25,3 +25,8 @@ printf "${Clear}%.0s" {1..5}
     echo -e "${Note} - ${GraphicsCard} Selected"
     eval "SYSTEM+=(\"\${$GraphicsCard[@]}\")"
 } || echo -e "${Note} - Skiping graphics card instalation"
+
+# Checks if grub is installed and replaces the default configuration file
+_IsInstalled grub && [ -f "/boot/grub/grub.cfg" ] && {
+    source ./grub.sh
+}
