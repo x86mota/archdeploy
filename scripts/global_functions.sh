@@ -69,3 +69,25 @@ function _CloneRepo {
         return 0
     } || echo -e "${Clear}${Error} - Repository not found: ${URL} ." && exit 1
 }
+
+# Custom Option
+function _AskCustomOption {
+    local Prompt=$1
+    local Options=($2)
+
+    [[ ! $3 ]] && return 1
+
+    echo -e "${Action} - ${Prompt}"
+    for Opt in ${!Options[@]}; do
+        echo "$((${Opt} + 1))) ${Options[Opt]}"
+    done
+
+    read -rp "Enter your choice (default = NONE): [1-${#Options[@]}] "
+
+    if [[ "${REPLY}" =~ ^[1-9]$ ]]; then
+        [[ Options[$(($REPLY - 1))] ]] && {
+            eval "$3='${Options[$(($REPLY - 1))]}'"
+            return 0
+        }
+    fi
+}
