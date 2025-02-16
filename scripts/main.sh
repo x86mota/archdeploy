@@ -14,3 +14,8 @@ else
     kernel=$(uname -s | tr '[:upper:]' '[:lower:]')
     SYSTEM+=("${kernel}-headers")
 fi
+
+# Prompt user to select a graphics card vendor
+GraphicsVendors=("Amd" "Intel" "Nvidia")
+_AskCustomOption "Which Graphics Card?" "${GraphicsVendors[*]}" GraphicsCard
+printf "${Clear}%.0s" {1..5}
