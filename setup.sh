@@ -47,3 +47,8 @@ echo -e "${Note} - Downloading files..."
 git clone --quiet --depth=1 "${GitRepo}" "${DownloadDir}" && {
   echo -e "${Clear}${OK} - Downloading files..."
 }
+
+# Set executable permissions
+cd "${DownloadDir}/scripts" || exit
+    chmod u+x main.sh
+    source ./main.sh
