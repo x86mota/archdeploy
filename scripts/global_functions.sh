@@ -55,3 +55,17 @@ function _InstallPackage {
 
     echo -e "${Clear}${Error} - Unknown package ${Pkg}." && exit 1
 }
+
+# Clone a remote repository
+function _CloneRepo {
+    local URL="$1"
+    local TargetDir="$2"
+
+    [[ -d "${TargetDir}" ]] && rm -rf "${TargetDir}"
+
+    echo -e "${Note} - Cloning repository ${URL} ... "
+    git clone "${URL}" "${TargetDir}" &>/dev/null && {
+        echo -e "${Clear}${OK} - Cloning repository ${URL} ... "
+        return 0
+    } || echo -e "${Clear}${Error} - Repository not found: ${URL} ." && exit 1
+}
