@@ -19,3 +19,14 @@ function _IsPacmanAvailable {
         return 1
     fi
 }
+
+# Checks if package is available in AUR
+function _IsAURAvailable {
+    local AurHelper="$1"
+    local Pkg="$2"
+    if ${AurHelper} -Si "${Pkg}" &>/dev/null; then
+        return 0
+    else
+        return 1
+    fi
+}
