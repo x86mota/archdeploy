@@ -10,3 +10,12 @@ function _IsInstalled {
     fi
 }
 
+# Checks if package is available in Arch repositories
+function _IsPacmanAvailable {
+    local Pkg="$1"
+    if pacman -Si "${Pkg}" &>/dev/null; then
+        return 0
+    else
+        return 1
+    fi
+}
