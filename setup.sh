@@ -26,3 +26,10 @@ clear && echo -e "\033[1;32m
      *\`                            \`*                          OOb\"      .JMML.                                             
 
 \033[0m"
+
+# Check if is Archlinux
+source /etc/os-release
+[[ ! "${ID}" == "arch" ]] && {
+    echo -e "${Error} - It seems that the system is not ArchLinux. Aborting..."
+    exit 1
+}
