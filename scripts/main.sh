@@ -64,3 +64,6 @@ ScriptsDir="${HOME}/.local/bin"
 
 # Apply theme settings
 source ./theme.sh
+
+# Enable Services
+sudo systemctl enable ly.service 2>/dev/null
