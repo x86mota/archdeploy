@@ -91,3 +91,13 @@ function _AskCustomOption {
         }
     fi
 }
+
+# Update GRUB
+function _UpdateGrub {
+    echo -e "${Note} - Updating GRUB..."
+    sudo grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null && {
+        echo -e "${Clear}${OK} - Updating GRUB..."
+        return 0
+    } || echo -e "${Clear}${Error} - Updating GRUB..." 
+    return 1
+}
