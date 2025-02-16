@@ -33,3 +33,9 @@ source /etc/os-release
     echo -e "${Error} - It seems that the system is not ArchLinux. Aborting..."
     exit 1
 }
+
+# Check if running as root. If root, script will exit
+[[ $UID -eq 0 ]] && {
+    echo "${Error} - This script should not be executed as root! Exiting..."
+    exit 1
+}
