@@ -46,3 +46,8 @@ _CloneRepo "${Dotfiles}" "${DownloadDir}/${TargetDir}" && {
         cp -r "${DownloadDir}/${TargetDir}/${Dir}" "${HOME}/"
     done
 }
+
+# For NVIDIA users
+[[ ${GraphicsCard} = "Nvidia" ]] && {
+    source ./nvidia.sh
+}
