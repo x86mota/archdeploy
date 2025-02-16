@@ -61,3 +61,6 @@ ScriptsDir="${HOME}/.local/bin"
         fi
     done
 }
+
+# Apply theme settings
+source ./theme.sh
