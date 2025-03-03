@@ -57,7 +57,6 @@ SYSTEM+=(
     ffmpegthumbnailer
     firefox
     papirus-icon-theme
-    ttf-roboto
     ttf-jetbrains-mono-nerd
     noto-fonts-emoji
     ttf-dejavu
