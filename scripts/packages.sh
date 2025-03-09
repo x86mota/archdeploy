@@ -28,7 +28,6 @@ SYSTEM+=(
     swww
     ly
     kitty
-    neovim
     bash-completion
     fastfetch
     ntfs-3g
@@ -67,6 +66,8 @@ SYSTEM+=(
     nwg-look
     gtk-engine-murrine
     sassc
+    visual-studio-code-bin
+    google-chrome
 )
 
 Amd=(
