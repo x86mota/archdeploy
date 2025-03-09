@@ -76,7 +76,7 @@ sudo systemctl enable ly.service 2>/dev/null
 #  Setup completed message
 echo -e "${OK} - Installation Completed\n"
 echo -en "${Action} - Would you like to reboot now? (y/n): "
-read
+read -r
 if [[ "$REPLY" =~ [Yy]$ ]]; then
     systemctl reboot
 fi
