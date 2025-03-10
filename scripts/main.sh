@@ -36,11 +36,6 @@ for Pkg in "${SYSTEM[@]}"; do
     _InstallPackage "${Pkg}"
 done
 
-# Remove QT packages required by hyprland
-for Pkg in "${toRemove[@]}"; do
-    sudo pacman -Rdd "${Pkg}"
-done
-
 # Copy configuration files
 Dotfiles="https://github.com/x86mota/hyprdots.git"
 TargetDir=$(basename ${Dotfiles} | sed 's/\.git$//')

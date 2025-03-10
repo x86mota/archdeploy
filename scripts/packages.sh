@@ -105,13 +105,3 @@ Nvidia=(
     lib32-nvidia-utils
     lib32-vulkan-icd-loader
 )
-
-toRemove=(
-    hyprland-qtutils
-    hyprland-qt-support
-    qt6-base
-    qt6-declarative
-    qt6-wayland
-    qt6-svg
-    qt6-translations
-)
