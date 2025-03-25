@@ -19,7 +19,7 @@ This repository is dedicated to the installation of packages and customization o
 ## Installation
 Just copy this command in your terminal and execute
 ```bash
-bash <(curl -sL https://codeberg.org/x86mota/hypr-arch/raw/branch/main/setup.sh)
+bash <(curl -sL https://raw.githubusercontent.com/x86mota/archdeploy/refs/heads/main/setup.sh)
 ```
 <br>
 
