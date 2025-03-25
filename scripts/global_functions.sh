@@ -3,31 +3,19 @@
 # Checks if package is already installed
 function _IsInstalled {
     local Pkg="$1"
-    if command -v "${Pkg}" &>/dev/null || pacman -Q "${Pkg}" &>/dev/null; then
-        return 0
-    else
-        return 1
-    fi
+    pacman -Q "${Pkg}" &>/dev/null
 }
 
 # Checks if package is available in Arch repositories
 function _IsPacmanAvailable {
     local Pkg="$1"
-    if pacman -Si "${Pkg}" &>/dev/null; then
-        return 0
-    else
-        return 1
-    fi
+    pacman -Si "${Pkg}" &>/dev/null
 }
 
 # Checks if package is available in AUR
 function _IsAURAvailable {
     local Pkg="$1"
-    if ${AurHelper} -Si "${Pkg}" &>/dev/null; then
-        return 0
-    else
-        return 1
-    fi
+    ${AurHelper} -Si "${Pkg}" &>/dev/null
 }
 
 # Install Package
@@ -36,24 +24,36 @@ function _InstallPackage {
     local Args="-S --noconfirm --needed"
     local Msg="Installing ${Pkg}..."
     local AURMsg="Installing ${Pkg} from AUR. This may take a while..."
+
+    if _IsInstalled "${Pkg}"; then
+        echo -e "${Note} - ${Pkg} already installed."
+        return 0
+    fi
     
     if _IsPacmanAvailable "${Pkg}"; then
         echo -e "${Note} - ${Msg}"
-        sudo pacman "${Args}" "${Pkg}" &>/dev/null && {
+        if sudo pacman ${Args} "${Pkg}" &>/dev/null; then
             echo -e "${Clear}${OK} - ${Msg}"
             return 0
-        } || echo -e "${Clear}${Error} - ${Msg}" && exit 1
+        else
+            echo -e "${Clear}${Error} - ${Msg}"
+            exit 1
+        fi
     fi
 
     if _IsAURAvailable "${Pkg}"; then
         echo -e "${Note} - ${AURMsg}"
-        ${AurHelper} "${Args}" "${Pkg}" &>/dev/null && {
-            echo -e "${OK} - ${AURMsg}"
+        if ${AurHelper} ${Args} "${Pkg}" &>/dev/null; then
+            echo -e "${Clear}${OK} - ${AURMsg}"
             return 0
-        } || echo -e "${Clear}${Error} - ${AURMsg}" && exit 1
+        else
+            echo -e "${Clear}${Error} - ${AURMsg}"
+            exit 1
+        fi
     fi
 
-    echo -e "${Clear}${Error} - Unknown package ${Pkg}." && exit 1
+    echo -e "${Clear}${Error} - Package ${Pkg} not found."
+    exit 1
 }
 
 # Clone a remote repository
@@ -98,6 +98,6 @@ function _UpdateGrub {
     sudo grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null && {
         echo -e "${Clear}${OK} - Updating GRUB..."
         return 0
-    } || echo -e "${Clear}${Error} - Updating GRUB..." 
+    } || echo -e "${Clear}${Error} - Updating GRUB..."
     return 1
 }
