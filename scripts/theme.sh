@@ -10,7 +10,7 @@ function _InstallTheme {
 }
 
 # Install GTK theme
-_InstallTheme "https://github.com/vinceliuice/Mojave-gtk-theme.git" "-o standard -a standard -s standard -t all --libadwaita"
+_InstallTheme "https://github.com/vinceliuice/WhiteSur-gtk-theme.git" "-o normal -t all -s nord --libadwaita"
 
 # Install icon theme
 _InstallTheme "https://github.com/vinceliuice/WhiteSur-icon-theme.git" "-t all -a -b" 
