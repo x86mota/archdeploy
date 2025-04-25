@@ -55,7 +55,6 @@ SYSTEM+=(
     gvfs
     ffmpegthumbnailer
     firefox
-    papirus-icon-theme
     ttf-jetbrains-mono-nerd
     noto-fonts-emoji
     ttf-dejavu
@@ -67,7 +66,16 @@ SYSTEM+=(
     gtk-engine-murrine
     sassc
     visual-studio-code-bin
-    google-chrome
+    bibata-cursor-theme
+    discord
+    steam
+    lutris
+    wine
+    winetricks
+    wine-gecko
+    wine-mono
+    mangohud
+    goverlay
 )
 
 Amd=(
