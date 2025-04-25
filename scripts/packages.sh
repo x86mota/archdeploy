@@ -54,7 +54,6 @@ SYSTEM+=(
     unzip
     gvfs
     ffmpegthumbnailer
-    firefox
     ttf-jetbrains-mono-nerd
     noto-fonts-emoji
     ttf-dejavu
@@ -66,6 +65,7 @@ SYSTEM+=(
     gtk-engine-murrine
     sassc
     visual-studio-code-bin
+    brave-bin
     bibata-cursor-theme
     discord
     steam
