@@ -10,14 +10,14 @@ function _InstallTheme {
 }
 
 # Install GTK theme
-_InstallTheme "https://github.com/vinceliuice/WhiteSur-gtk-theme.git" "-o normal -t all -s nord --libadwaita"
+_InstallTheme "https://github.com/vinceliuice/Matcha-gtk-theme.git" "--libadwaita"
 
 # Install icon theme
-_InstallTheme "https://github.com/vinceliuice/WhiteSur-icon-theme.git" "-t all -a -b" 
+_InstallTheme "https://github.com/vinceliuice/WhiteSur-icon-theme.git" "-d ${HOME}/.icons -t all -a -b"
 
 # Initiate GTK dark mode and apply icon, cursor theme and fonts
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-gsettings set org.gnome.desktop.interface gtk-theme "Mojave-Dark-grey"
+gsettings set org.gnome.desktop.interface gtk-theme "Matcha-dark-sea"
 gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-nord-dark"
 gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Ice"
 gsettings set org.gnome.desktop.interface cursor-size "24"
