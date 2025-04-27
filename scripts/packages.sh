@@ -52,6 +52,7 @@ SYSTEM+=(
     tumbler
     xarchiver
     unzip
+    p7zip
     gvfs
     ffmpegthumbnailer
     ttf-jetbrains-mono-nerd
