@@ -2,13 +2,13 @@ name: Test Hyprland Installer
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # usaremos docker para simular o Arch
+    runs-on: ubuntu-latest # usaremos docker para simular o Arch
 
     steps:
       - name: Checkout repo
@@ -17,7 +17,9 @@ jobs:
       - name: Run Arch container
         run: |
           docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace archlinux:latest bash -c "
-            pacman -Syu --noconfirm git sudo base-devel
-            chmod +x setup.sh
-            ./setup.sh
-          "
+          pacman -Sy --noconfirm sudo git base-devel
+          useradd -m tester
+          echo 'tester ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+          cp -r /workspace /home/tester/
+          chown -R tester:tester /home/tester/workspace
+          su - tester -c 'cd /home/tester/workspace && chmod +x setup.sh && ./setup.sh' "
