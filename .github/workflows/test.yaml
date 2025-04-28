@@ -20,6 +20,7 @@ jobs:
           pacman -Sy --noconfirm sudo git base-devel
           useradd -m tester
           echo 'tester ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+          echo -e "\n#[multilib]\n#Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
           cp -r /workspace /home/tester/
           chown -R tester:tester /home/tester/workspace
           su - tester -c 'cd /home/tester/workspace && chmod +x setup.sh && ./setup.sh' "
