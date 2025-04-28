@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check for installed AUR helper
-AurHelpers=("paru" "yay")
+AurHelpers=("yay" "paru")
 for Helper in "${AurHelpers[@]}"; do
     if _IsInstalled "$Helper" &>/dev/null; then
         AurHelper="$Helper"

@@ -74,19 +74,25 @@ function _CloneRepo {
 function _AskCustomOption {
     local Prompt=$1
     local Options=($2)
+    local Choice=$3
 
-    [[ ! $3 ]] && return 1
+    [[ ! $Choice ]] && return 1
 
     echo -e "${Action} - ${Prompt}"
     for Opt in ${!Options[@]}; do
         echo "$((${Opt} + 1))) ${Options[Opt]}"
     done
 
-    read -rp "Enter your choice (default = NONE): [1-${#Options[@]}] "
+    read -rp "Enter your choice (default = 1): [1-${#Options[@]}] "
+
+    if [[ -z "$REPLY" ]]; then
+        eval "$Choice='${Options[0]}'"
+        return 0
+    fi
 
     if [[ "${REPLY}" =~ ^[1-9]$ ]]; then
         [[ Options[$(($REPLY - 1))] ]] && {
-            eval "$3='${Options[$(($REPLY - 1))]}'"
+            eval "$Choice='${Options[$(($REPLY - 1))]}'"
             return 0
         }
     fi
