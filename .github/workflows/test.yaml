@@ -1,0 +1,23 @@
+name: Test Hyprland Installer
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # usaremos docker para simular o Arch
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run Arch container
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace archlinux:latest bash -c "
+            pacman -Syu --noconfirm git sudo base-devel
+            chmod +x install.sh
+            ./install.sh
+          "
