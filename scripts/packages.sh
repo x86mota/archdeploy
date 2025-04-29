@@ -23,7 +23,7 @@ SYSTEM+=(
     wireplumber
     pavucontrol
     waybar
-    wofi
+    rofi
     swaync
     swww
     ly
