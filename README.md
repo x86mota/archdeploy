@@ -37,7 +37,7 @@ bash <(curl -sL https://raw.githubusercontent.com/x86mota/archdeploy/refs/heads/
 |   [thunar](https://archlinux.org/packages/extra/x86_64/thunar/)                                   | File Explorer         |
 |   [btop](https://archlinux.org/packages/extra/x86_64/btop/)                                       | System Monitor        |
 |   [swaync](https://archlinux.org/packages/extra/x86_64/swaync/)                                   | Notifications         |
-|   [brave](https://aur.archlinux.org/packages/brave-bin) <sup>aur</sup>                            | Web Browser           |
+|   [firefox](https://archlinux.org/packages/extra/x86_64/firefox/)                                 | Web Browser           |
 |   [mousepad](https://archlinux.org/packages/extra/x86_64/mousepad/)                               | Simple Text Editor    |
 |   [feh](https://archlinux.org/packages/extra/x86_64/feh/)                                         | Image Viewer          |
 |   [mpv](https://archlinux.org/packages/extra/x86_64/mpv/)                                         | Media Player          |
