@@ -101,9 +101,11 @@ function _AskCustomOption {
 # Update GRUB
 function _UpdateGrub {
     echo -e "${Note} - Updating GRUB..."
-    sudo grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null && {
+    if sudo grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null; then
         echo -e "${Clear}${OK} - Updating GRUB..."
         return 0
-    } || echo -e "${Clear}${Error} - Updating GRUB..."
-    return 1
+    else
+        echo -e "${Clear}${Error} - Updating GRUB..."
+        return 1
+    fi
 }
