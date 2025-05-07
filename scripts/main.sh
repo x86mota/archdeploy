@@ -66,7 +66,7 @@ ScriptsDir="${HOME}/.local/bin"
 source ./theme.sh
 
 # Remove unused packages
-sudo pacman -Rdd --noconfirm adwaita-cursors
+sudo pacman -Rdd --noconfirm adwaita-cursors 2>/dev/null
 
 # Enable Services
 sudo systemctl enable ly.service 2>/dev/null
