@@ -66,7 +66,7 @@ SYSTEM+=(
     gtk-engine-murrine
     sassc
     visual-studio-code-bin
-    brave-bin
+    firefox
     bibata-cursor-theme
     discord
     steam
