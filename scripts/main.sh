@@ -41,7 +41,7 @@ Dotfiles="https://github.com/x86mota/hyprdots.git"
 TargetDir=$(basename ${Dotfiles} | sed 's/\.git$//')
 
 _CloneRepo "${Dotfiles}" "${DownloadDir}/${TargetDir}" && {
-    Dirs=(".config" ".local")
+    Dirs=(".config" ".local" ".fonts")
     for Dir in ${Dirs[@]}; do
         cp -r "${DownloadDir}/${TargetDir}/${Dir}" "${HOME}/"
     done
