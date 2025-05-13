@@ -65,9 +65,6 @@ ScriptsDir="${HOME}/.local/bin"
 # Apply theme settings
 source ./theme.sh
 
-# Remove unused packages
-sudo pacman -Rdd --noconfirm adwaita-cursors 2>/dev/null
-
 # Enable Services
 sudo systemctl enable ly.service 2>/dev/null
 sudo systemctl enable bluetooth.service 2>/dev/null
