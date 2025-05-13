@@ -41,6 +41,7 @@ SYSTEM+=(
     feh
     mpv
     mousepad
+    nvim
     grim
     slurp
     btop
@@ -54,6 +55,7 @@ SYSTEM+=(
     unzip
     7zip
     gvfs
+    gnome-disk-utility
     ffmpegthumbnailer
     ttf-jetbrains-mono-nerd
     noto-fonts-emoji
@@ -65,10 +67,18 @@ SYSTEM+=(
     nwg-look
     gtk-engine-murrine
     sassc
+    kvantum-qt5
+    kvantum 
+    qt5ct
+    qt6ct
+    qt5-wayland
+    qt6-wayland
     visual-studio-code-bin
     firefox
     bibata-cursor-theme
     discord
+    telegram-desktop
+    spotify-launcher
     steam
     lutris
     wine
