@@ -36,6 +36,23 @@ for Pkg in "${SYSTEM[@]}"; do
     _InstallPackage "${Pkg}"
 done
 
+# Install pasystray from source
+pasystray="https://github.com/christophgysin/pasystray.git"
+TargetDir=$(basename ${pasystray} | sed 's/\.git$//')
+
+_CloneRepo "${pasystray}" "${DownloadDir}/${TargetDir}"
+
+cd "${DownloadDir}/${TargetDir}"
+autoupdate &>/dev/null
+aclocal &>/dev/null
+autoheader &>/dev/null
+automake --add-missing &>/dev/null
+autoconf &>/dev/null
+./configure --enable-appindicator --disable-x11 &>/dev/null
+make &>/dev/null
+sudo make install &>/dev/null
+cd $OLDPWD
+
 # Copy configuration files
 Dotfiles="https://github.com/x86mota/hyprdots.git"
 TargetDir=$(basename ${Dotfiles} | sed 's/\.git$//')

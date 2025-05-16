@@ -87,6 +87,13 @@ SYSTEM+=(
     wine-mono
     mangohud
     goverlay
+    autoconf
+    automake
+    pkg-config
+    libnotify
+    libx11
+    libappindicator-gtk3
+    paprefs
 )
 
 Amd=(
