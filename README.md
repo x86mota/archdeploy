@@ -31,16 +31,15 @@ bash <(curl -sL https://raw.githubusercontent.com/x86mota/archdeploy/refs/heads/
 |   [hyprland](https://archlinux.org/packages/extra/x86_64/hyprland/)                               | Wayland Compositor    |
 |   [waybar](https://archlinux.org/packages/extra/x86_64/waybar/)                                   | Status Bar            |
 |   [kitty](https://wiki.archlinux.org/title/Kitty)                                                 | Terminal Emulator     |
-|   [wofi](https://archlinux.org/packages/extra/x86_64/wofi/)                                       | App Launcher          |
+|   [rofi](https://archlinux.org/packages/extra/x86_64/rofi/)                                       | App Launcher          |
 |   [swww](https://archlinux.org/packages/extra/x86_64/swww/)                                       | Wallpaper Backend     |
-|   [fastfetch](https://archlinux.org/packages/extra/x86_64/fastfetch/)                             | Fetch Tool            |
 |   [thunar](https://archlinux.org/packages/extra/x86_64/thunar/)                                   | File Explorer         |
 |   [btop](https://archlinux.org/packages/extra/x86_64/btop/)                                       | System Monitor        |
 |   [swaync](https://archlinux.org/packages/extra/x86_64/swaync/)                                   | Notifications         |
 |   [firefox](https://archlinux.org/packages/extra/x86_64/firefox/)                                 | Web Browser           |
 |   [mousepad](https://archlinux.org/packages/extra/x86_64/mousepad/)                               | Simple Text Editor    |
-|   [feh](https://archlinux.org/packages/extra/x86_64/feh/)                                         | Image Viewer          |
-|   [mpv](https://archlinux.org/packages/extra/x86_64/mpv/)                                         | Media Player          |
+|   [ristretto](https://archlinux.org/packages/extra/x86_64/ristretto/)                             | Image Viewer          |
+|   [vlc](https://archlinux.org/packages/extra/x86_64/vlc/)                                         | Media Player          |
 |   [Visual Studio Code](https://aur.archlinux.org/packages/visual-studio-code-bin) <sup>aur</sup>  | Code Editor           |
 
 > [!NOTE]
