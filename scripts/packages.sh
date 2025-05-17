@@ -41,8 +41,8 @@ SYSTEM+=(
     bluez-tools
     bluez-utils
     blueman
-    feh
-    mpv
+    ristretto
+    vlc
     mousepad
     nvim
     grim
