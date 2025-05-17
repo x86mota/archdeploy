@@ -22,6 +22,7 @@ SYSTEM+=(
     lib32-pipewire
     wireplumber
     pavucontrol
+    pamixer
     waybar
     rofi
     swaync
