@@ -46,7 +46,7 @@ SYSTEM+=(
     mousepad
     nvim
     grim
-    slurp
+    flameshot-git
     btop
     polkit-gnome
     thunar
