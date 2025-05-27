@@ -31,6 +31,7 @@ SYSTEM+=(
     swww
     ly
     kitty
+    starship
     bash-completion
     fastfetch
     ntfs-3g

@@ -9,6 +9,11 @@ function _InstallTheme {
     bash "${DownloadDir}/${name}/install.sh" ${args} &>/dev/null
 }
 
+BASHRC="$HOME/.bashrc"
+if ! grep -q 'eval "\$(starship init bash)"' "$BASHRC"; then
+    echo -en '\n\n# Starship\neval "$(starship init bash)"' >> "$BASHRC"
+fi
+
 # Install GTK theme
 _InstallTheme "https://github.com/vinceliuice/Matcha-gtk-theme.git" "--theme sea --libadwaita"
 
